@@ -1,3 +1,9 @@
+Інструкція по запуску проєкта:
+Відкрити проєкт у VSCode
+Відкрити термінал
+Ввести команду в терміналі npm run dev
+
+Використане API: www.themealdb.com
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
