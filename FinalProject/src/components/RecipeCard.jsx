@@ -6,7 +6,7 @@ const RecipeCard = ({recipe}) => {
 
 	return (
 		<div className="recipe-card" onClick={() => navigate('/recipe/${recipe.idMeal')}>
-			<img src="{recipe.strMealThumb}" alt="{recipe.strMeal}" />
+			<img src={recipe.strMealThumb} alt={recipe.strMeal} />
 			<div className="info">
 				<h3>{recipe.strMeal}</h3>
 				<p>{recipe.strCategory}</p>
