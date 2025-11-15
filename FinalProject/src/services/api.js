@@ -5,17 +5,19 @@ export const fetchRecipes = async (query) => {
 		const res = await fetch(`${BASE_URL}/search.php?s=${query}`)
 		const data = await res.json()
 		return data.meals || []
-	} catch {
+	} catch (err) {
+		console.error("fetchRecipes error:", err);
 		return []
 	}
 }
 
-export const fetchRecipeByid = async (id) => {
+export const fetchRecipeById = async (id) => {
 	try {
 		const res = await fetch(`${BASE_URL}/lookup.php?i=${id}`)
 		const data = await res.json()
 		return data.meals[0]
-	} catch {
+	} catch (err) {
+		console.error("fetchRecipeById error:", err);
 		return null
 	}
 }

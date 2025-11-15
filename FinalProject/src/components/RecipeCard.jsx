@@ -5,7 +5,7 @@ const RecipeCard = ({recipe}) => {
 	const navigate = useNavigate();
 
 	return (
-		<div className="recipe-card" onClick={() => navigate('/recipe/${recipe.idMeal')}>
+		<div className="recipe-card" onClick={() => navigate(`/recipe/${recipe.idMeal}`)}>
 			<img src={recipe.strMealThumb} alt={recipe.strMeal} />
 			<div className="info">
 				<h3>{recipe.strMeal}</h3>

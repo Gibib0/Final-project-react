@@ -7,21 +7,30 @@ const RecipeDetail = () => {
 	const {id} = useParams()
 	const {addToFavorites} = useContext(GlobalContext)
 	const [recipe, setRecipe] = useState(null)
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const load = async () => {
+			setLoading(true);
 			const data = await fetchRecipeById(id)
 			setRecipe(data)
+			setLoading(false);
 		}
 		load()
 	}, [id])
 
-	if (!recipe) return <p>Loading...</p>
+	if (loading) return <p>Loading...</p>;
+	if (!recipe) return <p>Recipe is not found</p>
 
-	const ingredients = Object.keys(recipe)
-		.filter((key) => key.includes('Ingrediens') && recipe[key])
-		.map((key, i) => `${recipe[key]} - ${recipe['strMeasure' + (i + 1)]}`)
-
+	const ingredients = [];
+  for (let i = 1; i <= 20; i++) {
+    const ingr = recipe[`strIngredient${i}`];
+    const measure = recipe[`strMeasure${i}`];
+    if (ingr && ingr.trim()) {
+      ingredients.push({ name: ingr.trim(), measure: (measure || "").trim() });
+    }
+  }
+	
 	return (
 		<div className="container">
 			<div className="detail-container">
