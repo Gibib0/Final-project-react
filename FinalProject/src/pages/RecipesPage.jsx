@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { fetchRecipes } from "../services/api";
-import { useGlobal } from "../context/GlobalState";
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 import SearchBar from "../components/SearchBar";
 import RecipeList from "../components/RecipeList";
 
 const RecipesPage = () => {
-	const {recipes, setRecipes, setLoading, addToFavorites} = useGlobal()
+	const {recipes, setRecipes, setLoading, addToFavorites} = useContext(GlobalContext)
 	const [search, setSearch] = useState('')
 
 	useEffect(() => {
