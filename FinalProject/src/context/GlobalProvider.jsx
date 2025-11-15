@@ -8,10 +8,10 @@ const GlobalProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
 
   const addToFavorites = (recipe) => {
-    if (!favorites.some((r) => r.idMeal === recipe.idMeal)) {
-      setFavorites([...favorites, recipe])
-    }
+  if (!favorites.some((item) => item.idMeal === recipe.idMeal)) {
+    setFavorites([...favorites, recipe])
   }
+};
 
   const addToShoppingList = (item) => {
     setShoppingList([...shoppingList, item])
@@ -21,6 +21,10 @@ const GlobalProvider = ({ children }) => {
     setShoppingList(shoppingList.filter((x) => x !== item))
   }
 
+  const removeFromFavorites = (idMeal) => {
+  setFavorites(favorites.filter((item) => item.idMeal !== idMeal));
+}
+
   return (
     <GlobalContext.Provider
       value={{
@@ -28,6 +32,7 @@ const GlobalProvider = ({ children }) => {
         setRecipes,
         favorites,
         addToFavorites,
+        removeFromFavorites,
         shoppingList,
         addToShoppingList,
         removeFromShoppingList,

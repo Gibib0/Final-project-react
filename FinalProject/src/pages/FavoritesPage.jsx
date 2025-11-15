@@ -15,7 +15,7 @@ const FavoritesPage = () => {
       ) : (
         <div className="grid">
           {favorites.map((item) => (
-            <div key={item.idMeal}>
+            <div key={item.idMeal} className="favorite-item">
               <RecipeCard recipe={item} onAddToFavorites={addToFavorites} />
               <button className="btn-outline" onClick={() => removeFromFavorites(item.idMeal)}>Remove</button>
             </div>

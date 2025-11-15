@@ -1,12 +1,12 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import RecipesPage from "./pages/RecipesPage";
-import RecipeDetail from "./pages/RecipeDetail";
-import FavoritesPage from "./pages/FavoritesPage";
-import ShoppingListPage from "./pages/ShoppingListPage";
-import SearchResults from "./pages/SearchResults";
+import React from "react"
+import { Routes, Route } from "react-router-dom"
+import Header from "./components/Header"
+import Home from "./pages/Home"
+import RecipesPage from "./pages/RecipesPage"
+import RecipeDetail from "./pages/RecipeDetail"
+import FavoritesPage from "./pages/FavoritesPage"
+import ShoppingListPage from "./pages/ShoppingListPage"
+import SearchResults from "./pages/SearchResults"
 
 const App = () => {
   return (
