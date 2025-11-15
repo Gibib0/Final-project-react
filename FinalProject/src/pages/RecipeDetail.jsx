@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { fetchRecipeById } from "../services/api";
-import { GlobalContext } from "../context/GlobalState";
+import GlobalContext from "../context/GlobalContext";
 
 const RecipeDetail = () => {
 	const {id} = useParams()

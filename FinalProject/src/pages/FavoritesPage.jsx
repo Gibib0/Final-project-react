@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import RecipeCard from "../components/RecipeCard";
-import { GlobalContext } from "../context/GlobalState";
+import GlobalContext from "../context/GlobalContext";
 
 const FavoritesPage = () => {
   const { favorites, removeFromFavorites, addToFavorites } = useContext(GlobalContext);

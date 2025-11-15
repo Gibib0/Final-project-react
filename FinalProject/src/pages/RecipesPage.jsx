@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchRecipes } from "../services/api";
 import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import GlobalContext from "../context/GlobalContext";
 import SearchBar from "../components/SearchBar";
 import RecipeList from "../components/RecipeList";
 
